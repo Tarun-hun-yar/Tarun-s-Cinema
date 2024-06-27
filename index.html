@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .filter-blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body class="">
+
+    <div class=" bg-cover bg-center xl:h-[95vh]" style="background-image: url('Assets/image.jpg') ">
+
+        <ul class="header flex justify-around sm:justify-between items-center ">
+            <li><img src="Assets/Untitled.png" alt="" class="w-40 ml-3  sm:w-60 sm:ml-8 lg:ml-24 lg:w-72 xl:w-[30rem]">
+            </li>
+            <li><button
+                    class="text-white bg-red-600 rounded-md font-semibold text-sm px-2 py-1 mr-3 sm:mr-8 lg:mr-24 lg:text-[18px] xl:mr-32"
+                    onclick="redirectToPage2()">Sign In</button>
+            </li>
+        </ul>
+        <div
+            class=" mt-20 space-y-4 flex flex-col justify-center items-start w-[90vw] ml-3 sm:ml-8 lg:ml-20 xl:ml-36 xl:w-[40vw]">
+            <h1 class="text-white font-bold text-4xl xl:text-5xl">Unlimited movies, TV Shows & more</h1>
+            <h1 class="text-white font-semibold xl:text-2xl">Starts at ₹149. Cancel anytime.</h1>
+            <h1 class="text-white font-semibold xl:text-2xl">Ready to watch? Enter your Email to create restart your
+                membership.</h1>
+            <div class="flex flex-col space-y-2 sm:flex-row sm:space-x-2  justify-start">
+                <div class="">
+                    <input type="email" name="" id="" placeholder="Enter Email"
+                        class="bg-gray-900 text-white opacity-90 border border-gray-700  rounded-md py-2 xl:w-[25vw] xl:h-14">
+                </div>
+                <div>
+                    <button
+                        class="bg-red-700 text-white text-2xl font-semibold  rounded-sm p-1 xl:h-10 xl:w-[15vw] text-justify" onclick="redirectToPage2()">Get
+                        Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breakingLine bg-gray-500 h-2 ">
+        <h1 class="invisible text-sm">Lorem ipsum dolor sit amet.</h1>
+    </div>
+    <!-- --------------------------------------TV SECTION STARTED--------------------------------------------- -->
+    <div class="tvSection bg-black text-white flex flex-col lg:flex-row py-4">
+        <div class="flex flex-col lg:flex-col space-y-5 items-center justify-center">
+            <h1 class="font-semibold text-3xl mx-5 lg:font-bold lg:text-3xl xl:text-4xl">Enjoy on your TV</h1>
+            <h1 class="mx-5 lg:text-2xl">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players
+                and more.</h1>
+        </div>
+        <div class="flex justify-center">
+            <img src="Assets/new tv.jpg" alt="" class=" ">
+        </div>
+    </div>
+    <!-- ------Line Break--------- -->
+    <div class="breakingLine bg-gray-500 h-2 ">
+        <h1 class="invisible text-sm">Lorem ipsum dolor sit amet.</h1>
+    </div>
+    <!-- --------------------------------------MOBILE SECTION STARTED--------------------------------------------- -->
+    <div class="mobileSection bg-black text-white flex flex-col lg:flex-row lg:justify-around lg:items-center py-4">
+        <div class="flex justify-center">
+            <img src="Assets/mobileimg.jpg" alt="" class=" h-52 lg:h-72 xl:h-96">
+        </div>
+        <div class="flex flex-col lg:flex-col space-y-5 pt-2 ">
+            <h1 class="font-semibold text-3xl mx-5 lg:font-bold lg:text-3xl xl:text-4xl">Follow me on Instagram for more
+                updates</h1>
+            <h1 class="mx-5 lg:text-2xl">I will build it's backend part after learning NodeJs and ExpressJs.</h1>
+        </div>
+    </div>
+    <!-- ------Line Break--------- -->
+    <div class="breakingLine bg-gray-500 h-2 ">
+        <h1 class="invisible text-sm">Lorem ipsum dolor sit amet.</h1>
+    </div>
+    <!-- ------------------------------------------- MULTIPLE DEVICES SECTION STARTED ---------------------------- -->
+    <div class="multipleDeviceSection bg-black text-white flex flex-col lg:flex-row py-4">
+        <div class="flex flex-col lg:flex-col space-y-5 items-center justify-center">
+            <h1 class="font-semibold text-3xl mx-5 lg:font-bold lg:text-3xl xl:text-4xl">Watch everywhere</h1>
+            <h1 class="mx-5 lg:text-2xl">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
+            </h1>
+        </div>
+        <div class="flex justify-center pt-10 md:pt-20 ">
+            <img src="Assets/multiple devices.png" alt="" class="w-72 sm:w-96 md:w-[35rem]">
+        </div>
+    </div>
+    <!-- ------Line Break--------- -->
+    <div class="breakingLine bg-gray-500 h-2 ">
+        <h1 class="invisible text-sm">Lorem ipsum dolor sit amet.</h1>
+    </div>
+
+    <script>
+        function redirectToPage2() {
+            window.location.href = 'switchProfile.html'
+        }
+    </script>
+</body>
+
+</html>

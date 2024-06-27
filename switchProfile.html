@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-500">
+  <div class="ml-10">
+    <div class="flex flex-col items-center space-y-2">
+      <div>
+        <h1 class="font-bold text-xl sm:text-3xl lg:text-4xl xl:text-5xl flex justify-center mt-4 sm:mt-20">Who'se
+          Watching ?</h1>
+      </div>
+      <div>
+        <!-- --------------------- TRIAL AND RUN(CREATE NEW PROFILE) STARTED -->
+        <form id="createProfileForm" class="space-y-2">
+          <input type="text" id="profileName" placeholder="Enter your name" class="rounded-md px-2 ">
+          <button type="submit" class="bg-green-500 text-white rounded-md px-3 ">Create Profile</button>
+          <h1 class="font-semibold">Maximum 3 Profiles can be created</h1>
+        </form>
+        <!-- -------------------- TRIAL AND RUN  (CREATE NEW PROFILE) ENDED-->
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2  my-[1vh] sm:my-[10vh] sm:flex sm:justify-center">
+      <div class="my-3 mx-5 ">
+        <img src="Assets/Tarun.jpg" alt="" class="w-20 rounded-md cursor-pointer " onclick="redirectToPage3()">
+        <h1 class="font-semibold">Tarun</h1>
+      </div>
+      <div class="my-3 mx-5">
+        <img src="Assets/Profile Orange.jpg" alt="" class="w-20 rounded-md cursor-pointer" onclick="redirectToPage3()">
+        <h1 class="font-semibold">Ritika</h1>
+      </div>
+      <!-- <div class="my-3 mx-5">
+        <img src="Assets/Profile Red.png" alt="" class="w-20 rounded-md" onclick="redirectToPage3()">
+        <h1 class="font-semibold">Papa</h1>
+      </div>
+      <div class="my-3 mx-5">
+        <img src="Assets/Profile Yellow.jpg" alt="" class="w-20 rounded-md" onclick="redirectToPage3()">
+        <h1 class="font-semibold">Mumma</h1>
+      </div> -->
+      <!-- ---------------TRIAL AND RUN (CREATE NEW PEOFILE)-------------------- -->
+      <!-- <div class="my-3 mx-5">
+          
+      </div> -->
+      <!-- --------------------------------------------------------------------- -->
+    </div>
+  </div>
+  </div>
+
+  <script>
+    // -------YE LOGIC NEW PROFILE CREATE KARNE KE LIE HAI-----------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("createProfileForm");
+    const maxProfiles = 3;
+    let profileCount = 0;
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+
+        if (profileCount >= maxProfiles) {
+            alert("Maximum limit (" + maxProfiles + ") of profile creation reached!");
+            return;
+        }
+
+        // Get the entered profile name
+        const profileNameInput = document.getElementById("profileName");
+        const profileName = profileNameInput.value.trim();
+
+        // Check if the username exceeds the limit
+        if (profileName.length > 20) {
+            alert("Username limit exceeded (Maximum 20 characters allowed).");
+            return;
+        }
+
+        if (profileName !== "") {
+            // Create a new profile element
+            const profileContainer = document.querySelector(".grid.grid-cols-2");
+            const newProfileDiv = document.createElement("div");
+            newProfileDiv.classList.add("my-3", "mx-5");
+
+            // Create an image element for the new profile
+            const newProfileImage = document.createElement("img");
+            newProfileImage.src = "Assets/Profile Red.png"; // You can set the image source to a placeholder or default image
+            newProfileImage.alt = "Profile Picture";
+            newProfileImage.classList.add("w-20", "rounded-md");
+            newProfileDiv.appendChild(newProfileImage);
+
+            // Create a heading element for the new profile
+            const newProfileName = document.createElement("h1");
+            newProfileName.textContent = profileName;
+            newProfileName.classList.add("font-semibold");
+            newProfileDiv.appendChild(newProfileName);
+
+            // Append the new profile element to the profile container
+            profileContainer.appendChild(newProfileDiv);
+
+            // Clear the input field after creating the profile
+            profileNameInput.value = "";
+
+            // Increment the profile count
+            profileCount++;
+
+            // Disable the form if the maximum limit is reached
+            if (profileCount >= maxProfiles) {
+                const createProfileButton = document.querySelector("#createProfileForm button[type='submit']");
+                createProfileButton.disabled = true;
+            }
+
+            // Add pointer cursor to the new profile element
+            newProfileDiv.style.cursor = "pointer";
+
+            // Add click event listener to the new profile element
+            newProfileDiv.addEventListener("click", redirectToPage3);
+        } else {
+            // Inform the user to enter a name if the input field is empty
+            alert("Please enter a name for your profile.");
+        }
+    });
+
+    // Function to redirect to page 3
+    // function redirectToPage3() {
+    //     window.location.href = 'homePage.html';
+    // }
+});
+
+
+    // ----------------------YE FUNCTION PROFILES PAR CLICK KRKE NEXT HTML PAGE PAR JAANE KE LIE HAI----------
+    function redirectToPage3() {
+      window.location.href = 'homePage.html'
+    }
+  </script>
+
+</html>
